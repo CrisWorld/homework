@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form">
+        <label for="name-product">Product Name:</label>
+        <input type="text" name="name-product" id="name-product"> <br>
+        <label for="name-quantity">Product Quantity:</label>
+        <input type="text" name="name-quantity" id="quantity-product"> <br>
+        <label for="name-price">Product Price:</label>
+        <input type="text" name="name-price" id="price-product"> <br>
+        <button onclick="addItem()">Add</button>
+    </div>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Sub-total</th>
+                </tr>
+            </thead>
+            <tbody id="item">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">Total</th>
+                    <td id="total"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>  
+    <script src="data.js"></script>
+</body>
+</html>
