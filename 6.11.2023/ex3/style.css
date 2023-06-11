@@ -1,0 +1,9 @@
+body{
+    display: block;
+}
+.male-style .product-items, .female-style .product-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}

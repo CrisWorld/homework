@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cover{
+            display: flex;
+        }
+        .cover .square{
+            height: 40px;
+            width: 40px;
+            background-color: whitesmoke;
+            margin: 4px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        for(var i=0; i<5;i++) {
+            var demo='<div class="cover">';
+            for(var j=0; j<10;j++) {
+                demo += '<div class="square"></div>';
+            }
+            demo += '</div>';
+            document.getElementById('container').innerHTML += demo;
+        }
+        document.get('').innerHTML = demo;
+    </script>
+</body>
+</html>

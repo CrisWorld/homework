@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cover{
+            display: flex;
+        }
+        .cover .square1, .cover .square2{
+            height: 40px;
+            width: 40px;
+            background-color: whitesmoke;
+            margin: 4px;
+            border: 2px solid black;
+        }
+        .cover .square2{
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        for(var i=0; i<6;i++) {
+            var demo='<div class="cover">';
+            for(var j=0; j<10;j++) {
+                if (i%2==0) demo += '<div class="square1"></div>';
+                else demo += '<div class="square2"></div>';
+            }
+            demo += '</div>';
+            document.getElementById('container').innerHTML += demo;
+        }
+        document.get('').innerHTML = demo;
+    </script>
+</body>
+</html>
