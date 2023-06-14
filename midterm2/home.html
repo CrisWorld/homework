@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./icon/css/all.css">
+</head>
+<body style="position: relative; ">
+    <div class="web-container">
+        <header>
+            <nav class="menu">
+                <a href="home.html"><img src="./img/logo.png" alt=""></a>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="body">
+        <div class="cover">
+            <button class="male-style">Thời Trang Nam</button>
+            <button class="female-style">Thời Trang Nữ</button>
+            <div class="items" id="items">
+            </div>
+        </div>
+        <div class="product-management" id="product-management">
+            <h2 style="font-family: 'Roboto Condensed', sans-serif;">Quản Lý Sản Phẩm</h2>
+            <label for="product-name" style="font-family: 'Roboto Condensed', sans-serif;">Tên sản phẩm</label> <br>
+            <input type="text" id="product-name"> <br> <br>
+            <label for="product-price">Giá</label> <br>
+            <input type="text" id="product-price"> <br> <br>
+            <label for="product-kind">Loại Sản Phẩm</label> <br>
+            <input type="text" id="product-kind"> <br> <br>
+            <label for="product-image">Hình Ảnh</label> <br>
+            <div class="box">
+                <label for="myfile" style="text-align: center; display: block;">Chọn hình ảnh</label>
+                <input type="file" id="myfile" name="myfile" accept="image/"><br><br>
+            </div>
+            <div style="text-align: center;">
+                <button class="add-button">Thêm sản phẩm</button>
+                <button class="update-button">Cật nhật</button>
+            </div>
+        </div>
+        <div class="edit-button">
+            <button style="background-color: #606C5D; width: 30px; height: 30px; border: none; display: none;" onclick="displayBox()"><i class="fa-solid fa-pen-to-square"></i></button>
+        </div>
+    </div>
+    <script src="java.js"></script>
+    <script src="function.js"></script>
+</body>
+</html>
