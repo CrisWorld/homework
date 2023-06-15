@@ -1,15 +1,15 @@
+label{
+    font-family: 'Roboto Condensed', sans-serif;
+}
 .web-container{
     position: relative;
     width: 100%;
 }
-header{
+.web-container header{
     margin: 0;
     width: 100%;
 }
-label{
-    font-family: 'Roboto Condensed', sans-serif;
-}
-.menu{
+.web-container .menu{
     display: block;
     margin: 0;
     box-sizing: border-box;
@@ -75,7 +75,7 @@ label{
     flex: 3;
     justify-content: center;
 }
-.body .male-style,.body .female-style{
+.male-style,.female-style{
     width: 500px;
     height: 50px;
     outline: none;
@@ -134,7 +134,7 @@ label{
 .card-title{
     overflow: hidden;
     text-overflow: ellipsis;
-    text-wrap: nowrap;
+    white-space: nowrap;
 }
 @media only screen and (max-width: 1331px) {
     .body{
@@ -149,7 +149,7 @@ label{
         width: 100%;
     }
     .edit-button{
-        position: absolute;
+        position: fixed;
         right: 2px;
         top: 100px;
     }
@@ -158,13 +158,21 @@ label{
     }
     .body .product-management{
         display: none;
-        right: -20%;
         width: 80%;
     }
     .body .product-management.responsive{
         display: block;
-        position: absolute;
+        position: fixed !important;
         right: 10%;
         z-index: 4;
+    }
+    .box{
+        position: relative;
+    }
+    #myfile{
+        position: absolute;;
+        overflow: hidden;
+        width: 300px;
+        left: 10px;
     }
   }
