@@ -57,6 +57,8 @@ let women = [
     image:"https://i.pinimg.com/564x/85/3f/bb/853fbb818f3c2fff054b0b4da6d96875.jpg"
 }
 ];
+var current_id;
+var current_type;
 function loadMale(){
     var content = "";
     document.getElementsByClassName('male-style')[0].style = "background-color: #FFF4F4";
@@ -70,7 +72,7 @@ function loadMale(){
                                 '<p class="card-text">Giá: '+man[i].price+'đ</p>'+
                                 '<div style="display: flex; justify-content: space-around;">'+
                                     '<a href="#" class="btn btn-primary">Đặt ngay</a>'+
-                                    '<a href="#" style="color: white; background-color: #F1C376; padding: 11px; padding-top: 7px; border-radius: 4px;"><i class="fa-solid fa-pen-to-square"></i></a>'+
+                                    '<a href="#" onclick="editProduct('+man[i].id+',1)" style="color: white; background-color: #F1C376; padding: 11px; padding-top: 7px; border-radius: 4px;"><i class="fa-solid fa-pen-to-square"></i></a>'+
                                     '<a href="#" onclick="removeProduct('+man[i].id+',1)" style="color: white; background-color: #CC3333; padding: 11px; padding-top: 7px; border-radius: 4px;"><i class="fa-solid fa-trash"></i></a>'+
                                 '</div></div></div>';
     }
@@ -89,7 +91,7 @@ function loadFemale(){
                                 '<p class="card-text">Giá: '+women[i].price+'đ</p>'+
                                 '<div style="display: flex; justify-content: space-around;">'+
                                     '<a href="#" class="btn btn-primary">Đặt ngay</a>'+
-                                    '<a href="#" class="edit-btn" style="color: white; background-color: #F1C376; padding: 11px; padding-top: 7px; border-radius: 4px;"><i class="fa-solid fa-pen-to-square"></i></a>'+
+                                    '<a href="#" onclick="editProduct('+women[i].id+',2)" style="color: white; background-color: #F1C376; padding: 11px; padding-top: 7px; border-radius: 4px;"><i class="fa-solid fa-pen-to-square"></i></a>'+
                                     '<a href="#" onclick="removeProduct('+women[i].id+',2)" style="color: white; background-color: #CC3333; padding: 11px; padding-top: 7px; border-radius: 4px;"><i class="fa-solid fa-trash"></i></a>'+
                                 '</div></div></div>';
     }
@@ -152,7 +154,44 @@ function removeProduct(id, type){
     }
 
 }
+function editProduct(id, type){
+    if (type == '1'){
+        for (var i = 0; i < man.length; i++){
+            if (man[i].id == id){
+            document.getElementById('product-name').value = man[i].name;
+            document.getElementById('product-price').value = man[i].price;
+            document.getElementById('product-kind').value = type;
+            current_i = i;
+            }
+        }
+    } else
+    if (type == '2'){
+        for (var i = 0; i < women.length; i++){
+            if (women[i].id == id){
+            document.getElementById('product-name').value = women[i].name;
+            document.getElementById('product-price').value = women[i].price;
+            document.getElementById('product-kind').value = type;
+            current_i = i;
+            }
+        }
+    }
+    current_type = type;
+}
+function updateProduct(){
+    if (current_type == '1' && current_id !== "" && src !== undefined){
+        man[current_i].name = document.getElementById('product-name').value;
+        man[current_i].price = document.getElementById('product-price').value;
+        man[current_i].image = src;
+        loadMale();
+    } else
+    if (current_type == '2' && current_id !== "" && src !== undefined){
+        women[current_i].name = document.getElementById('product-name').value;
+        women[current_i].price = document.getElementById('product-price').value;
+        women[current_i].image = src;
+        loadFemale();
+    } else alert("Lỗi!")
+
+}
 document.querySelector('.male-style').addEventListener('click',loadMale); 
 document.querySelector('.female-style').addEventListener('click',loadFemale);  
 document.querySelector('.add-button').addEventListener('click',addProduct);
-document.querySelector('.update-button').addEventListener('click',loadMale); 
